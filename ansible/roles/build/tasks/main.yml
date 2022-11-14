@@ -1,0 +1,7 @@
+---
+
+- name: Install dependicies
+  shell: npm install --verbose
+
+- name: build app
+  shell: ng build --prod

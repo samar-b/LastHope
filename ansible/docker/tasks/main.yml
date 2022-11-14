@@ -1,0 +1,20 @@
+--- 
+- 
+  docker_image: 
+    build: 
+      path: /var/lib/jenkins/workspace/Samar
+      pull: false
+    force_source: true
+    name: "devops:latest"
+    source: build
+    state: present
+  name: "create image docker"
+- 
+  docker_container: 
+    image: "devops:latest"
+    name: myappcontainer
+    ports: 
+      - "4200:80"
+    recreate: true
+    state: started
+  name: "run container docker"
